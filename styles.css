@@ -236,3 +236,37 @@ footer {
   justify-content: center;
   margin-top: 30px;
 }
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.primary-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.outline-btn {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+
+.outline-btn:hover {
+  background: #2563eb;
+  color: white;
+}

@@ -194,3 +194,31 @@ footer {
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
+/* FORCE button styling everywhere */
+a.btn {
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+a.primary-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+a.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+a.outline-btn {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+
+a.outline-btn:hover {
+  background: #2563eb;
+  color: white;
+}

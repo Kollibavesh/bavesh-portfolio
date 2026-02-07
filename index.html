@@ -27,8 +27,8 @@
 </section>
 
 <!-- ABOUT -->
-<section class="section">
-    <h3>About Me</h3>
+<section class="about fade-in">
+  <h2>About Me</h2>
     <p>
         Software Developer with 1+ year of hands-on experience through a full-stack
         development internship and academic projects. Proficient in Java, Spring Boot,
@@ -148,6 +148,19 @@
     document.querySelectorAll(".section, .card").forEach(el => {
         observer.observe(el);
     });
+</script>
+<script>
+  const faders = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  faders.forEach(el => observer.observe(el));
 </script>
 
 </body>

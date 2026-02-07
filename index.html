@@ -11,7 +11,7 @@
 
 <!-- HERO -->
 <section class="hero fade-in">
-    <img src="bavesh.jpg" alt="Bavesh Kolli" class="profile-pic">
+    <img src="images/bavesh.jpg" alt="Bavesh Kolli" class="profile-pic delay-1">
     <h1 class="delay-2">Bavesh Kolli</h1>
     <h2 class="delay-3">Full Stack Software Developer</h2>
 
@@ -20,14 +20,10 @@
         Spring Boot, REST APIs, and modern frontend technologies.
     </p>
 
-   <div class="hero-buttons">
-  <a href="#projects" class="btn primary-btn">View Projects</a>
-  <a href="Bavesh_Kolli_Resume.pdf"
-     class="btn outline-btn"
-     target="_blank">
-     Download Resume
-  </a>
-</div>
+    <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="resume/Bavesh_Kolli_Resume.pdf" class="btn-outline" download>Download Resume</a>
+    </div>
 </section>
 
 <!-- ABOUT -->
@@ -152,32 +148,6 @@
     document.querySelectorAll(".section, .card").forEach(el => {
         observer.observe(el);
     });
-</script>
-<script>
-  const faders = document.querySelectorAll(".fade-in");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  faders.forEach(el => observer.observe(el));
-</script>
-<script>
-  const fadeElements = document.querySelectorAll('.fade-in');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  fadeElements.forEach(el => observer.observe(el));
 </script>
 
 </body>

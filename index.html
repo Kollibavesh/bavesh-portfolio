@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bavesh Kolli | Full Stack Software Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero fade-in">
+    <img src="images/bavesh.jpg" alt="Bavesh Kolli" class="profile-pic delay-1">
+    <h1 class="delay-2">Bavesh Kolli</h1>
+    <h2 class="delay-3">Full Stack Software Developer</h2>
+
+    <p>
+        Building scalable, maintainable, and data-driven applications using Java,
+        Spring Boot, REST APIs, and modern frontend technologies.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="resume/Bavesh_Kolli_Resume.pdf" class="btn-outline" download>Download Resume</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+    <h3>About Me</h3>
+    <p>
+        Software Developer with 1+ year of hands-on experience through a full-stack
+        development internship and academic projects. Proficient in Java, Spring Boot,
+        REST APIs, JavaScript, and SQL, with strong foundations in object-oriented
+        programming, Agile methodologies, and relational databases.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section class="section gray">
+    <h3>Skills</h3>
+    <div class="skills-grid">
+        <div>
+            <h4>Programming</h4>
+            <p>Java, Python, JavaScript, SQL</p>
+        </div>
+        <div>
+            <h4>Backend & APIs</h4>
+            <p>Spring Boot, REST APIs, Service-Oriented Architecture</p>
+        </div>
+        <div>
+            <h4>Databases</h4>
+            <p>MySQL, PostgreSQL, Relational Data Modeling</p>
+        </div>
+        <div>
+            <h4>Cloud & Tools</h4>
+            <p>AWS (Foundational), Git, Linux, VS Code</p>
+        </div>
+        <div>
+            <h4>Analytics</h4>
+            <p>Pandas, NumPy, Tableau, Power BI</p>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section">
+    <h3>Experience</h3>
+    <div class="card">
+        <h4>Java Full Stack Developer Intern</h4>
+        <span>Talent Sprint | Sep 2021 – Aug 2022</span>
+        <ul>
+            <li>Developed full-stack web applications using Java, Spring Boot, and JavaScript.</li>
+            <li>Designed RESTful APIs for seamless frontend-backend communication.</li>
+            <li>Implemented SQL queries and database schemas using MySQL.</li>
+            <li>Built responsive UI components using HTML, CSS, and JavaScript.</li>
+            <li>Followed Agile practices and collaborated with cross-functional teams.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section gray">
+    <h3>Projects</h3>
+
+    <div class="projects-grid">
+        <div class="card">
+            <h4>Retail Sales Performance Dashboard</h4>
+            <p>
+                Designed an interactive Tableau dashboard analyzing 4 years of retail data,
+                tracking KPIs such as sales, profit, inventory, and customer loyalty.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>ERP Analytics with SAP HANA</h4>
+            <p>
+                Conducted ERP simulations analyzing profitability, pricing strategies,
+                inventory optimization, and customer demand trends.
+            </p>
+        </div>
+
+        <div class="card">
+            <h4>Full Stack Web Application</h4>
+            <p>
+                Built backend REST APIs using Java and Spring Boot and integrated frontend
+                components to support end-to-end workflows.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section">
+    <h3>Certifications</h3>
+    <ul class="cert-list">
+        <li>AWS Technical Essentials</li>
+        <li>AWS Cloud Practitioner Essentials</li>
+        <li>Java Full Stack Developer</li>
+        <li>APSSDC Python Certification</li>
+    </ul>
+</section>
+
+<!-- CONTACT -->
+<section class="section gray contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:kollibavesh@gmail.com">kollibavesh@gmail.com</a></p>
+    <p>Phone: +1 (862) 380-9281</p>
+    <p>Location: Cleveland, OH</p>
+</section>
+
+<footer>
+    © 2026 Bavesh Kolli | Built with AWS S3
+</footer>
+<script>
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    document.querySelectorAll(".section, .card").forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>

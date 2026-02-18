@@ -187,23 +187,26 @@ fetch("https://api.github.com/users/Kollibavesh/repos")
 </script>
 <script>
 fetch("https://api.github.com/users/Kollibavesh/repos?sort=updated")
-  .then(response => response.json())
+  .then(res => res.json())
   .then(data => {
     const container = document.getElementById("github-projects");
 
-    data.slice(0, 6).forEach(repo => {
+    data.slice(0, 6).forEach((repo, index) => {
       const card = document.createElement("div");
-      card.className = "card project-card";
+      card.className = "card project-card fade-up";
+      card.style.animationDelay = `${index * 0.15}s`;
 
       card.innerHTML = `
         <h4>${repo.name}</h4>
         <p>${repo.description || "No description provided."}</p>
-        <div class="repo-info">
-            <span>⭐ ${repo.stargazers_count}</span>
-            <span>${repo.language || ""}</span>
+
+        <div class="repo-meta">
+          <span class="badge">${repo.language || "Code"}</span>
+          <span class="stars">⭐ ${repo.stargazers_count}</span>
         </div>
-        <a href="${repo.html_url}" target="_blank" class="btn outline-btn">
-            View Repository →
+
+        <a href="${repo.html_url}" target="_blank" class="btn primary-btn">
+          View Repository
         </a>
       `;
 
@@ -211,6 +214,7 @@ fetch("https://api.github.com/users/Kollibavesh/repos?sort=updated")
     });
   });
 </script>
+
 
 </body>
 </html>

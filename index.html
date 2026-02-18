@@ -186,20 +186,24 @@ fetch("https://api.github.com/users/Kollibavesh/repos")
   });
 </script>
 <script>
-fetch("https://api.github.com/users/Kollibavesh/repos")
+fetch("https://api.github.com/users/Kollibavesh/repos?sort=updated")
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById("github-projects");
 
     data.slice(0, 6).forEach(repo => {
       const card = document.createElement("div");
-      card.className = "card";
+      card.className = "card project-card";
 
       card.innerHTML = `
         <h4>${repo.name}</h4>
-        <p>${repo.description || "No description available."}</p>
+        <p>${repo.description || "No description provided."}</p>
+        <div class="repo-info">
+            <span>⭐ ${repo.stargazers_count}</span>
+            <span>${repo.language || ""}</span>
+        </div>
         <a href="${repo.html_url}" target="_blank" class="btn outline-btn">
-          View on GitHub
+            View Repository →
         </a>
       `;
 

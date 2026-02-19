@@ -421,3 +421,7 @@ body {
   margin-top: 50px;
   align-items: stretch;
 }
+.project-card {
+  max-width: 600px;
+  margin: 0 auto;
+}

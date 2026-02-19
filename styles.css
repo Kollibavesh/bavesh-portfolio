@@ -411,3 +411,13 @@ a.outline-btn:hover {
   width: 100%;
   text-align: center;
 }
+body {
+  padding-top: 80px;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+  align-items: stretch;
+}

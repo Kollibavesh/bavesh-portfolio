@@ -425,3 +425,14 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
+.project-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.project-buttons .btn {
+  min-width: 140px;
+  text-align: center;
+}

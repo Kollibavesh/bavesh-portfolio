@@ -92,51 +92,59 @@
 </section>
 
 <!-- PROJECTS -->
-    <h3>Projects</h3>
-<div id="github-projects" class="projects-grid"></div> 
-<section id="projects" class="section gray">
-  
+    <section id="projects" class="section gray">
 
-   <div class="project-card" data-category="bi">
-        <img src="dashboard.png"
-     alt="Retail Dashboard Preview"
-     class="project-image">
+  <h3>Projects</h3>
 
-
-  <h4>Retail Sales Performance Dashboard</h4>
-  <p>
-    Interactive Tableau dashboard analyzing retail sales trends,
-    customer satisfaction, inventory performance, and profitability (2011–2014).
-  </p>
-
-  <div class="repo-meta">
-    <span class="badge">Retail Sales</span>
-    <span class="stars">Business Intelligence</span>
+  <!-- Filter Buttons (if you added them) -->
+  <div class="filter-buttons">
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('bi')">BI</button>
+    <button onclick="filterProjects('dev')">Development</button>
   </div>
 
-  <!-- Buttons Container -->
-  <div style="display:flex; gap:15px; flex-wrap:wrap;">
+  <div class="projects-grid">
 
-    <!-- GitHub Button -->
-    <a href="https://github.com/Kollibavesh/retail-sales-performance-dashboard" 
-       target="_blank" 
-       class="btn primary-btn">
-       GitHub
-    </a>
+    <!-- Retail Project -->
+    <div class="project-card" data-category="bi">
+      <img src="images/retail-dashboard.png" 
+           alt="Retail Dashboard Preview"
+           class="project-image">
 
-    <!-- Live Dashboard Button -->
-    <a href="https://public.tableau.com/app/profile/bavesh.kolli/viz/Retail_sales_dashboard_17716200955270/RETAILDASHBOARD?publish=yes"
-       target="_blank"
-       class="btn outline-btn">
-       Live Dashboard
-    </a>
+      <h4>Retail Sales Performance Dashboard</h4>
+
+      <p>
+        Interactive Tableau dashboard analyzing retail sales trends,
+        customer satisfaction, inventory performance, and profitability.
+      </p>
+
+      <div class="repo-meta">
+        <span class="badge">Tableau</span>
+        <span class="stars">Business Intelligence</span>
+      </div>
+
+      <div class="project-buttons">
+        <a href="YOUR_GITHUB_LINK" 
+           target="_blank" 
+           class="btn primary-btn">
+           GitHub
+        </a>
+
+        <a href="YOUR_TABLEAU_LINK"
+           target="_blank"
+           class="btn outline-btn">
+           Live Dashboard
+        </a>
+      </div>
+    </div>
+
+    <!-- Dynamic GitHub Projects -->
+    <div id="github-projects"></div>
 
   </div>
-</div>
 
-    
- 
 </section>
+
 
 
 <!-- CERTIFICATIONS -->

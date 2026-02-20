@@ -93,7 +93,14 @@
 
 <!-- PROJECTS -->
 <section id="projects" class="section gray">
-    <div class="project-card">
+    <div class="filter-buttons">
+  <button onclick="filterProjects('all')">All</button>
+  <button onclick="filterProjects('bi')">BI</button>
+  <button onclick="filterProjects('dev')">Development</button>
+  <button onclick="filterProjects('ml')">ML</button>
+</div>
+
+   <div class="project-card" data-category="bi">
         <img src="dashboard.png" 
      alt="Retail Dashboard Preview" 
      class="project-image">
@@ -156,6 +163,7 @@
 <footer>
     © 2026 Bavesh Kolli | Built with AWS S3
 </footer>
+    
 <script>
     const observer = new IntersectionObserver(
         entries => {
@@ -229,7 +237,8 @@ fetch("https://api.github.com/users/Kollibavesh/repos?sort=updated")
 
     data.slice(0, 6).forEach((repo, index) => {
       const card = document.createElement("div");
-      card.className = "card project-card fade-up";
+     card.className = "card project-card fade-up";
+card.dataset.category = "dev";
       card.style.animationDelay = `${index * 0.15}s`;
 
       card.innerHTML = `
@@ -250,7 +259,22 @@ fetch("https://api.github.com/users/Kollibavesh/repos?sort=updated")
     });
   });
 </script>
+</script>
 
+<!-- Filter Script -->
+<script>
+function filterProjects(category) {
+  const projects = document.querySelectorAll('.project-card');
 
+  projects.forEach(project => {
+    if (category === 'all' || project.dataset.category === category) {
+      project.style.display = "block";
+    } else {
+      project.style.display = "none";
+    }
+  });
+}
+</script>
+    
 </body>
 </html>

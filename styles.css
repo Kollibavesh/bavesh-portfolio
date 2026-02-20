@@ -446,3 +446,7 @@ body {
 .project-card:hover .project-image {
   transform: scale(1.05);
 }
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+}

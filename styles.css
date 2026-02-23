@@ -490,3 +490,8 @@ html {
 .contact-form button {
   cursor: pointer;
 }
+.tech-stack {
+  margin-top: 15px;
+  color: #93c5fd;
+  font-weight: 500;
+}

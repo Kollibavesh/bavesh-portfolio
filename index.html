@@ -86,8 +86,8 @@
         <h4>Java Full Stack Developer Intern</h4>
         <span>Talent Sprint | Sep 2021 – Aug 2022</span>
         <ul>
-            <li>Developed full-stack web applications using Java, Spring Boot, and JavaScript.</li>
-            <li>Designed RESTful APIs for seamless frontend-backend communication.</li>
+            <li>Developed 3 full-stack applications improving performance by 30% using Java, Spring Boot, and JavaScript.</li>
+            <li>Designed 12+ REST APIs, reducing backend response time by 25% for seamless frontend-backend communication.</li>
             <li>Implemented SQL queries and database schemas using MySQL.</li>
             <li>Built responsive UI components using HTML, CSS, and JavaScript.</li>
             <li>Followed Agile practices and collaborated with cross-functional teams.</li>
@@ -163,18 +163,28 @@
 </section>
 
 <!-- CONTACT -->
-<section class="section gray contact">
-    <h3>Contact</h3>
+<section id="contact" class="section gray contact">
+  <h3>Contact Me</h3>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Bavesh Kolli" required>
+    <input type="email" placeholder="kollibavesh@gmail.com" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="btn primary-btn">Send Message</button>
+  </form>
+
+  <div class="contact-info">
     <p>Email: <a href="mailto:kollibavesh@gmail.com">kollibavesh@gmail.com</a></p>
     <p>Phone: +1 (862) 380-9281</p>
     <p>Location: Cleveland, OH</p>
+  </div>
 </section>
 
 <footer>
-    © 2026 Bavesh Kolli | Built with AWS S3
+    © 2026 Bavesh Kolli | Deployed using AWS S3 + GitHub Actions CI/CD
 </footer>
     
-<script>
+<!--<script>
     const observer = new IntersectionObserver(
         entries => {
             entries.forEach(entry => {
@@ -189,7 +199,7 @@
     document.querySelectorAll(".section, .card").forEach(el => {
         observer.observe(el);
     });
-</script>
+</script> -->
 <!-- Resume Modal -->
 <div id="resumeModal" class="modal">
   <div class="modal-content">
@@ -240,15 +250,21 @@ fetch("https://api.github.com/users/Kollibavesh/repos")
   });
 </script> -->
 <script>
+const container = document.getElementById("github-projects");
+
+// 1️⃣ Show loading text before fetch
+container.innerHTML = "<p>Loading projects...</p>";
+
 fetch("https://api.github.com/users/Kollibavesh/repos?sort=updated")
   .then(res => res.json())
   .then(data => {
-    const container = document.getElementById("github-projects");
+
+    container.innerHTML = ""; // Clear loading text
 
     data.slice(0, 6).forEach((repo, index) => {
       const card = document.createElement("div");
-     card.className = "card project-card fade-up";
-card.dataset.category = "dev";
+      card.className = "project-card";
+      card.dataset.category = "dev";
       card.style.animationDelay = `${index * 0.15}s`;
 
       card.innerHTML = `
@@ -256,9 +272,9 @@ card.dataset.category = "dev";
         <p>${repo.description || "No description provided."}</p>
 
         <div class="repo-meta">
-  <span class="stars">⭐ ${repo.stargazers_count}</span>
-</div>
-
+          <span class="badge">${repo.language || "Code"}</span>
+          <span class="stars">⭐ ${repo.stargazers_count}</span>
+        </div>
 
         <a href="${repo.html_url}" target="_blank" class="btn primary-btn">
           View Repository
@@ -267,9 +283,11 @@ card.dataset.category = "dev";
 
       container.appendChild(card);
     });
+  })
+  .catch(() => {
+    container.innerHTML = "<p>Failed to load projects.</p>";
   });
 </script>
-
 
 <!-- Filter Script -->
 <script>
@@ -305,6 +323,17 @@ window.addEventListener("scroll", () => {
       link.classList.add("active");
     }
   });
+});
+</script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+<script>
+ScrollReveal().reveal('.section, .project-card', {
+  distance: '40px',
+  duration: 800,
+  easing: 'ease-in-out',
+  origin: 'bottom',
+  interval: 100
 });
 </script>
 </body>

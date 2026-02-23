@@ -179,12 +179,19 @@
 <section id="contact" class="section gray contact">
   <h3>Contact Me</h3>
 
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your E-mail" required>
-    <textarea placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit" class="btn primary-btn">Send Message</button>
-  </form>
+  <form class="contact-form" 
+      action="https://formspree.io/f/mykdboyp" 
+      method="POST">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+  
+  <input type="email" name="email" placeholder="Your E-mail" required>
+  
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  
+  <button type="submit" class="btn primary-btn">Send Message</button>
+
+</form>
 
   <div class="contact-info">
     <p>Email: <a href="mailto:kollibavesh@gmail.com">kollibavesh@gmail.com</a></p>
@@ -281,18 +288,21 @@ fetch("https://api.github.com/users/Kollibavesh/repos?sort=updated")
       card.style.animationDelay = `${index * 0.15}s`;
 
       card.innerHTML = `
-        <h4>${repo.name}</h4>
-        <p>${repo.description || "No description provided."}</p>
+  <h4>${repo.name.replace(/-/g, " ")}</h4>
 
-        <div class="repo-meta">
-          <span class="badge">${repo.language || "Code"}</span>
-          <span class="stars">⭐ ${repo.stargazers_count}</span>
-        </div>
+  <p>
+    ${repo.description || "Spring Boot backend application implementing REST APIs and database integration."}
+  </p>
 
-        <a href="${repo.html_url}" target="_blank" class="btn primary-btn">
-          View Repository
-        </a>
-      `;
+  <div class="repo-meta">
+    <span class="badge">${repo.language || "Code"}</span>
+    <span class="stars">⭐ ${repo.stargazers_count}</span>
+  </div>
+
+  <a href="${repo.html_url}" target="_blank" class="btn primary-btn">
+    View Repository
+  </a>
+`;
 
       container.appendChild(card);
     });
